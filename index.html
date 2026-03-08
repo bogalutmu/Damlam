@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Damla Ergene | 8 Mart Dünya Kadınlar Günü</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-1: #210914;
+      --bg-2: #3b1026;
+      --bg-3: #5a183a;
+      --card: rgba(255, 245, 249, 0.10);
+      --card-border: rgba(255, 220, 235, 0.18);
+      --text: #fff6fa;
+      --muted: #e9cedb;
+      --accent: #d46a92;
+      --accent-2: #9a5bb5;
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(212, 106, 146, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(154, 91, 181, 0.20), transparent 28%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .floating-heart,
+    .floating-flower {
+      position: fixed;
+      pointer-events: none;
+      opacity: 0.15;
+      z-index: 0;
+      animation: floatUp 10s ease-in-out infinite;
+      filter: blur(0.3px);
+    }
+
+    .floating-heart { font-size: 20px; }
+    .floating-flower { font-size: 28px; }
+
+    .f1 { top: 12%; left: 6%; animation-delay: 0s; }
+    .f2 { top: 18%; right: 8%; animation-delay: 1.2s; }
+    .f3 { top: 62%; left: 10%; animation-delay: 2.4s; }
+    .f4 { top: 70%; right: 12%; animation-delay: 3.6s; }
+    .f5 { top: 38%; left: 50%; animation-delay: 4.6s; }
+
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-16px) translateX(6px); }
+    }
+
+    header {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+      padding: 40px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero-card,
+    .photo-card,
+    .info-card,
+    .message-card,
+    .traits-card,
+    .footer-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card {
+      padding: 46px;
+    }
+
+    .top-badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(212, 106, 146, 0.24), rgba(154, 91, 181, 0.24));
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #ffe9f2;
+      font-size: 14px;
+      letter-spacing: 0.4px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 1.08;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, #ffd1e1, #e0c2ff, #ffc7d9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .lead {
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 640px;
+    }
+
+    .hero-note {
+      font-size: 16px;
+      color: #f4d9e5;
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent);
+      background: rgba(255,255,255,0.05);
+      border-radius: 14px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: 0.28s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(90deg, #a22255, #7a2f77);
+      box-shadow: 0 10px 24px rgba(122, 47, 119, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(122, 47, 119, 0.34);
+    }
+
+    .btn-secondary {
+      color: #fff6fa;
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.09);
+    }
+
+    .photo-card {
+      padding: 22px;
+    }
+
+    .photo-wrap {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 560px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.02) contrast(1.02);
+    }
+
+    .photo-overlay {
+      position: absolute;
+      inset: auto 16px 16px 16px;
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(35, 9, 20, 0.1), rgba(35, 9, 20, 0.75));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .photo-overlay h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .photo-overlay p {
+      color: #f5dbe7;
+      font-size: 15px;
+    }
+
+    section {
+      padding: 28px 0 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .info-grid,
+    .traits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .info-card,
+    .traits-card {
+      padding: 28px;
+    }
+
+    .info-card h3,
+    .traits-card h3 {
+      margin-bottom: 12px;
+      font-size: 21px;
+      color: #ffd6e5;
+    }
+
+    .info-card p,
+    .traits-card p,
+    .traits-card li {
+      color: #f1d8e4;
+      font-size: 15.5px;
+    }
+
+    .message-card {
+      padding: 38px;
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(162, 34, 85, 0.32), rgba(122, 47, 119, 0.28));
+    }
+
+    .message-card .mini-title {
+      font-size: 14px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: #ffd6e5;
+      margin-bottom: 14px;
+    }
+
+    .message-card .main-text {
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.45;
+      margin-bottom: 18px;
+    }
+
+    .message-card .signature {
+      color: #f7dce7;
+      font-size: 16px;
+    }
+
+    .traits-card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .traits-card li {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-wrap {
+      padding: 24px 0 60px;
+    }
+
+    .footer-card {
+      padding: 28px;
+      text-align: center;
+    }
+
+    .footer-card p {
+      color: #f3d7e2;
+      font-size: 15px;
+    }
+
+    .soft-divider {
+      width: 120px;
+      height: 1px;
+      margin: 22px auto 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    }
+
+    .replace-note {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 13px;
+      color: #ffd4e4;
+      background: rgba(255,255,255,0.05);
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .info-grid,
+      .traits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .photo-card,
+      .info-card,
+      .traits-card,
+      .message-card {
+        padding: 24px;
+      }
+
+      .photo-wrap {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        min-height: auto;
+        padding-top: 26px;
+      }
+
+      .lead {
+        font-size: 17px;
+      }
+
+      .hero-note {
+        font-size: 15px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .photo-wrap {
+        min-height: 340px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-flower f1">🌸</div>
+  <div class="floating-heart f2">♥</div>
+  <div class="floating-flower f3">✿</div>
+  <div class="floating-heart f4">♥</div>
+  <div class="floating-flower f5">❀</div>
+
+  <header>
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <span class="top-badge">8 Mart Dünya Kadınlar Günü • Damla Ergene’ye</span>
+        <h1>
+          Gücüyle ilham veren,
+          <span class="highlight">gülüşüyle iç ısıtan</span>
+          bir kadın için.
+        </h1>
+        <p class="lead">
+          Bu sayfayı senin için, içimden geldiği gibi, 8 Mart’ta sana küçük ama özel bir iz bırakmak için hazırladım.
+        </p>
+
+        <div class="hero-note">
+          Reklamcılıktan dijital ve sosyal medya liderliğine uzanan yolculuğunda,
+          işini severek yapan, başarılı, düzenli, sevgi dolu ve gerçekten hayranlık uyandıran bir kadınsın.
+        </div>
+
+        <div class="buttons">
+          <a href="#mesaj" class="btn btn-primary">Mesajım</a>
+          <a href="#damla" class="btn btn-secondary">Seni Anlatan Şeyler</a>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-wrap">
+          <img src="damla-placeholder.jpg" alt="Damla Ergene" />
+          <div class="photo-overlay">
+            <h3>Damla Ergene</h3>
+            <p>Head of Digital &amp; Social Media • Güçlü, zarif ve ilham verici</p>
+          </div>
+    </div>
+  </header>
+
+  <section id="damla">
+    <div class="container">
+      <h2 class="section-title">Seni anlatan güzel şeyler</h2>
+      <p class="section-subtitle">
+        Bazen birini anlatmak için uzun cümlelere gerek kalmaz; birkaç gerçek detay zaten her şeyi yeterince anlatır.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>💼 Kariyerin</h3>
+          <p>
+            Reklamcılıkla başlayan yolculuğunu bugün Head of Digital &amp; Social Media olarak devam ettirmen,
+            işini ne kadar severek ve hakkını vererek yaptığını gösteriyor.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>💜 Senin en güzel yanların</h3>
+          <p>
+            Sevdiklerine değer veren, aile bağlarını önemseyen, düzenli ve zarif yapısıyla
+            bulunduğu yere sıcaklık katan özel birisin.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>🐾 Kalbinin güzelliği</h3>
+          <p>
+            Hayvanlara olan sevgin, özellikle kedine olan bağlılığın,
+            senin ne kadar ince ruhlu ve şefkatli biri olduğunu en güzel şekilde anlatıyor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mesaj">
+    <div class="container">
+      <div class="message-card">
+        <div class="mini-title">Sana birkaç cümle</div>
+        <div class="main-text">
+          Damla'm,
+          <br /><br />
+          güçlü duruşun, işine verdiğin emek, sevdiklerine gösterdiğin değer ve o güzel gülüşünle
+          gerçekten çok özelsin. Düzeni seven yanın, hayatı zarafetle taşıman ve kendi alanında
+          başarıyla parlaman seni daha da özel kılıyor.
+          <br /><br />
+          8 Mart Dünya Kadınlar Günü’nde, sana küçük ama içten bir şey bırakmak istedim.
+        </div>
+        <div class="signature">İyi ki varsın ✨</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Seni anlatan zarif ayrıntılar</h2>
+      <p class="section-subtitle">
+        Bazen bir insanı en güzel anlatan şey, onda sevdiğin küçük ama gerçek ayrıntılardır.
+      </p>
+
+      <div class="traits-grid">
+        <div class="traits-card">
+          <h3>🌹 Karakterin</h3>
+          <ul>
+            <li>Sevdiklerine içtenlikle değer verirsin.</li>
+            <li>Düzenli ve disiplinli yapın güven verir.</li>
+            <li>Zarif ama güçlü bir duruşun var.</li>
+          </ul>
+        </div>
+
+        <div class="traits-card">
+          <h3>✨ Sende hayranlık uyandıran şeyler</h3>
+          <ul>
+            <li>İşini severek yapman.</li>
+            <li>Başarıyı doğal bir şekilde taşıman.</li>
+            <li>Güzel enerjin ve gülüşün.</li>
+          </ul>
+        </div>
+
+        <div class="traits-card">
+          <h3>🤍 Sana dair güzel detaylar</h3>
+          <ul>
+            <li>Aile yapısına önem vermen.</li>
+            <li>Kedine ve hayvanlara düşkün olman.</li>
+            <li>Düzen ve estetiği bir arada taşıman.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="message-card">
+        <div class="mini-title">8 Mart notu</div>
+        <div class="main-text">
+          Dünyayı daha zarif, daha anlamlı ve daha güzel yapan kadınların günü kutlu olsun.
+          Ama bugün, içimden özellikle sana birkaç güzel şey bırakmak geldi.
+        </div>
+        <div class="signature">Senin için sevgiyle ✨</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-wrap">
+    <div class="container">
+      <div class="footer-card">
+        <p>
+          Senin için sevgiyle hazırlanmış küçük bir 8 Mart sayfası.
+        </p>
+        <div class="soft-divider"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
